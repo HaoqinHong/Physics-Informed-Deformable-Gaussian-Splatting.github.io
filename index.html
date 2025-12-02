@@ -48,6 +48,7 @@
 
             <h1 style="display: inline; clear:none;"><small>Towards Unified Constitutive Laws for Time-Evolving Material Field</small></h1></div>
           <!-- <h1 class="title is-3 publication-title">CVPR 2025</h1> -->
+             <h3 style="color:#5a6268;" class="title is-3">AAAI 2026 </h3>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a target="_blank" rel="noopener noreferrer" href="https://haoqinhong.github.io/">Haoqin Hong</a><sup>1*</sup>&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -96,7 +97,7 @@
   
               <!-- Code Link. -->
               <span class="link-block">
-                <a target="_blank" rel="noopener noreferrer" href="https://anonymous.4open.science/r/Physics-Informed-Deformable-Gaussian-Splatting"
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/SCAILab-USTC/Physics-Informed-Deformable-Gaussian-Splatting"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -124,12 +125,55 @@
   </div>
 </section>
 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container">
+          <div class="content has-text-justified">
+              <h3 class="title is-3 is-centered has-text-centered">Results on the PIDG Synthetic Dataset</h3>
+          </div>
+
+          <div id="results-carousel" class="carousel results-carousel">
+              <div class="item item-fullbody">
+                  <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                      <source src="static/image/dry_ice.mp4"
+                              type="video/mp4">
+                  </video>
+              </div>
+              <div class="item item-steve">
+                  <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                      <source src="static/image/ball.mp4"
+                              type="video/mp4">
+                  </video>
+              </div>
+              <div class="item item-fullbody">
+                  <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+                      <source src="static/image/cloth.mp4"
+                              type="video/mp4">
+                  </video>
+              </div>
+              <div class="item item-chair-tp">
+                  <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+                      <source src="static/image/duck.mp4"
+                              type="video/mp4">
+                  </video>
+              </div>
+              <div class="item item-shiba">
+                  <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+                      <source src="static/image/kuro.mp4"
+                              type="video/mp4">
+                  </video>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container is-widescreen">
     <!-- <h2 class="title is-3">Framework Architecture</h2> -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <image src="./static/image/insights.jpg" class="img-responsive" alt="Insights"><br>
+        <image src="./static/image/insights.png" class="img-responsive" alt="Insights"><br>
           <p><b> Insights: </b>Physics-Informed Deformable Gaussian Splatting achieves physically consistent and generalisable monocular dynamic novel-view synthesis effects, 
             performing excellently in physical scenarios such as fluid dynamics and elastic mechanics.</p>
       </div>
@@ -161,7 +205,7 @@
     <h2 class="title is-3">Framework Overview</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <image src="./static/image/overview.jpg" class="img-responsive" alt="overview"><br>
+        <image src="./static/image/overview.png" class="img-responsive" alt="overview"><br>
         <div class="content has-text-justified">
           <p>
             <b>Overview of Physics-Informed Deformable Gaussian Splatting.</b> It integrates dynamic reconstruction in the canonical hash space (Sec. 4.1), physics-informed material fields (Sec. 4.2), and Lagrangian particle flow matching (Sec. 4.3) to achieve differentiable and physically consistent monocular dynamic video reconstruction.
@@ -295,11 +339,44 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <figure class="image" style="width: 60%; margin: 0 auto;">
-          <img src="./static/image/workflow.jpg" alt="overview" style="width: 100%; height: auto;">
+          <img src="./static/image/workflow.png" alt="overview" style="width: 100%; height: auto;">
         </figure>
         <div class="content has-text-justified">
           <p>
             <b>Network Architectures.</b> Top: Training pipeline of PIDG, including preprocessing and dynamic modeling, physics-informed material field, and Lagrangian particle flow matching. Bottom: Network architecture of PIDG with 4D decomposed hash encoding in a static-dynamic decoupled canonical hash space.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-widescreen">
+    <h2 class="title is-3">Quantitative Results</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <figure class="image" style="width: 60%; margin: 0 auto;">
+          <img src="./static/image/table_of_pidg.png" alt="overview" style="width: 100%; height: auto;">
+        </figure>
+        <figure class="image" style="width: 60%; margin: 0 auto;">
+          <img src="./static/image/exp_pidg.png" alt="overview" style="width: 100%; height: auto;">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            <b>Quantitative results comparison of novel view synthesis </b> on PIDG dataset. Our method achieves the best average results on
+            the PIDG dataset and generalizes effectively across various dynamic scenarios. The time-evolving material field constrained by  Cauchy momentum residual and Lagrangian particle flow matching improve structural similarity in challenging fluid, soft-body, and elastic scenarios.
+          </p>
+        </div>
+        <figure class="image" style="width: 60%; margin: 0 auto;">
+          <img src="./static/image/table_of_hyper.png" alt="overview" style="width: 100%; height: auto;">
+        </figure>
+        <figure class="image" style="width: 60%; margin: 0 auto;">
+          <img src="./static/image/exp_hyper.png" alt="overview" style="width: 100%; height: auto;">
+        </figure>
+        <div class="content has-text-justified">
+          <p>
+            <b>Quantitative results comparison of novel view synthesis </b> on HyperNeRF dataset.
           </p>
         </div>
       </div>
